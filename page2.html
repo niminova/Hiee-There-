@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Anniversary</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia,serif;
+}
+
+body{
+
+background:url("lavender-bg.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+position:relative;
+
+}
+
+/* Floating Hearts */
+
+.heart{
+
+position:absolute;
+
+color:#ffffff;
+
+font-size:18px;
+
+animation:float 8s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* Greeting Card */
+
+.card{
+
+position:relative;
+
+width:330px;
+
+background:url("paper.png");
+background-size:cover;
+
+border-radius:25px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+animation:showCard 1s ease;
+
+}
+
+@keyframes showCard{
+
+from{
+
+opacity:0;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+/* Lace */
+
+.lace{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+}
+
+/* Ribbon */
+
+.ribbon{
+
+position:absolute;
+
+left:-12px;
+
+top:45px;
+
+width:75px;
+
+}
+
+h1{
+
+color:#8c5fc6;
+
+font-size:32px;
+
+margin-top:25px;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+.next{
+
+margin-top:30px;
+
+background:#b78ad9;
+
+color:white;
+
+border:none;
+
+padding:13px 28px;
+
+border-radius:30px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:0 0 18px #d6b3ff;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="lace.png" class="lace">
+
+<img src="ribbon.png" class="ribbon">
+
+<h1>
+Happy <br>
+1st Anniversary
+</h1>
+
+<p>
+
+365 days of laughter,
+love,
+chaos,
+comfort,
+and forever to go. 💜
+
+</p>
+
+<button class="next" onclick="nextPage()">
+
+Next ➜
+
+</button>
+
+  </div>
+  <script>
+
+/* Floating Hearts */
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="🤍";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+heart.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* Next Page */
+
+function nextPage(){
+
+document.body.style.transition="0.8s";
+
+document.body.style.opacity="0";
+
+setTimeout(function(){
+
+window.location.href="page3.html";
+
+},800);
+
+}
+
+</script>
+
+</body>
+</html>
